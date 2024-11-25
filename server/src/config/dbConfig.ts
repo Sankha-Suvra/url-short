@@ -1,8 +1,18 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+import { error } from 'console'
 
+dotenv.config()
 const connectDb = async () =>{
+    const dbUri = process.env.DB_URI
+    console.log("db uri: ",dbUri)
+    if(!dbUri){
+        console.error("DB URI is missing in env file")
+        process.exit(1)
+    }
     try {
-        const connect = await mongoose.connect(`mongodb://localhost:27017/shortener`)
+        
+        const connect = await mongoose.connect(dbUri)
         console.log(
             "db connected: ", 
             connect.connection.host, 

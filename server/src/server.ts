@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import connectDb from "./config/dbConfig"
 import shortUrl from "./routes/shortUrl"
+import { log } from "console";
 connectDb();
 
 const port = process.env.port || 5001
@@ -23,5 +24,6 @@ app.get("/", (req, res)=>{
 
 
 app.listen(port, ()=>{
-    console.log(`Server is running on port ${port}`)
+    console.log(`Server is running on port ${port} and db uri is ${process.env.DB_URI}`)
+
 })

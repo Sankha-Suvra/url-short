@@ -13,9 +13,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
+    const dbUri = process.env.DB_URI;
+    console.log("db uri: ", dbUri);
+    if (!dbUri) {
+        console.error("DB URI is missing in env file");
+        process.exit(1);
+    }
     try {
-        const connect = yield mongoose_1.default.connect(`mongodb://localhost:27017/shortener`);
+        const connect = yield mongoose_1.default.connect(dbUri);
         console.log("db connected: ", connect.connection.host, connect.connection.name);
     }
     catch (error) {
