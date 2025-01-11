@@ -11,9 +11,15 @@ interface IDataTableProps {
 
 const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
   const { data, updateReloadState} = props;
-  console.log("data in data table is", data);
+  // console.log("data in data table is", data);
 
   const renderTableData = () => {
+
+    // if (!Array.isArray(data)) {
+    //   console.error("Data is not an array", data);
+    //   return null;
+    // }
+
     return data.map((item) => {
       return (
         <tr
