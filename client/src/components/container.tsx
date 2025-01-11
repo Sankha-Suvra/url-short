@@ -2,9 +2,7 @@ import * as React from 'react';
 import FormContainer from './FormContainer';
 import { UrlData } from '../interface/UrlData';
 import axios from 'axios';
-import { serverUrl } from '../helpers/Constants';
 import DataTable from './DataTable';
-
 interface IContainerProps {
 }
 
