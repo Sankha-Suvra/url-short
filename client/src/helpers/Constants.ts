@@ -1,2 +1,2 @@
-export const serverUrl = import.meta.env.VITE_SERVER_URL || "ec2-3-109-201-181.ap-south-1.compute.amazonaws.com/api"
+export const serverUrl = import.meta.env.VITE_SERVER_URL || "http://13.203.79.156/api"
 
