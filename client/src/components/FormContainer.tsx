@@ -14,7 +14,9 @@ const FormContainer: React.FunctionComponent<IFormContainerProps> = (props) => {
     e.preventDefault()
     try {
         await axios.post(`${serverUrl}/shorturl`,{
-            fullUrl: fullUrl
+            fullUrl: fullUrl,
+        },{
+            withCredentials:true
         })
         setFullUrl("")
         updateReloadState()
