@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors({
-    origin: "*",
+    origin: "https://hilarious-pie-38e44f.netlify.app", //changed from * to specific
     credentials: true,
 }))
 
