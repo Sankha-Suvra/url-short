@@ -14,7 +14,8 @@ const Container: React.FunctionComponent<IContainerProps> = () => {
     setReload(true)
   }
   const fetchTableData = async () => {
-    const response = await axios.get(`http://65.0.122.38/api/shortUrl`);
+    // http://65.0.122.38/api/shortUrl
+    const response = await axios.get(`https://url-shortener-76fl.onrender.com`);
     console.log("the response from server is", response);
     setData(response.data)   
     setReload(false)
